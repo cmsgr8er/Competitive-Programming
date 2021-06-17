@@ -2,7 +2,6 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-
 const int MN = 1e5 + 10;
 int N, M;
 vector<int> adj[MN];

@@ -8,7 +8,6 @@ int n, m;
 bool visited[MN], impossible = false;
 vector<int> adj[MN];
 int team[MN];
-
 void dfs(int node) {
 	visited[node] = true;
 	for (auto u:adj[node]) {
@@ -19,7 +18,6 @@ void dfs(int node) {
 		}
 	}
 }
-
 int main() {
 	cin >> n >> m;
 	int a,b;
@@ -36,8 +34,6 @@ int main() {
 	}
 	if (impossible) cout << "IMPOSSIBLE";
 	else {
-		for (int i=1; i<=n; i++) {
-			cout << team[i] << " ";
-		}
+		for (int i=1; i<=n; i++) cout << team[i] << " ";
 	}
 }

@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 int main() {
-	int N, K, a,b, median;
+	int N, K, a,b;
 	cin >> N >> K;
 	int difference[N+1], stack[N];
 	for (int i=0; i<N+1; i++) difference[i] = 0;

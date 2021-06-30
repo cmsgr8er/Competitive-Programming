@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 const int MN = 4e5 + 10;
 bool visited[MN] = {false};
 vector<int> adj[MN], one, two;
@@ -17,7 +16,6 @@ void dfs(int node) {
 		}
 	}
 }
-
 int main() {
 	int t, n, m, a, b, tracker = 0;
 	cin >> t;

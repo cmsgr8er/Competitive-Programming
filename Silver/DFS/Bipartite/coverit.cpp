@@ -45,5 +45,4 @@ int main() {
 		two.clear();
 		tracker += n;
 	}
-
 }

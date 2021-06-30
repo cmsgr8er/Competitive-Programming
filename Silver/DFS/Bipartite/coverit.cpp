@@ -4,7 +4,6 @@ const int MN = 4e5 + 10;
 bool visited[MN] = {false};
 vector<int> adj[MN], one, two;
 int team[MN] = {0};
-
 void dfs(int node) {
 	visited[node] = true;
 	for (auto u: adj[node]) {

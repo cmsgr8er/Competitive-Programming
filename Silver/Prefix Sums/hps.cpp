@@ -8,9 +8,7 @@ using vl = vector<long long>;
 
 vl psum(vl a) {
     vl psum(a.size() + 1);
-    for (int i=0; i<a.size(); i++) {
-        psum[i+1] = psum[i] + a[i];
-    }
+    for (int i=0; i<a.size(); i++) psum[i+1] = psum[i] + a[i];
     return psum;
 }
 void setIO(string fileName = "") {
@@ -30,25 +28,11 @@ int main() {
     vl h(N), p(N), s(N); // tracks each result
     for (int i=0; i<N; i++) {
         cin >> choice;
-        if (choice == 'H') {
-            h[i] = 0;
-            p[i] = 1;
-            s[i] = 0;
-        }
-        else if (choice == 'P') {
-            s[i] = 1;
-            h[i] = 0;
-            p[i] = 0;
-        }
-        else {
-            h[i] = 1;
-            s[i] = 0;
-            p[i] = 0;
-        }
+        if (choice == 'H') h[i] = 0, p[i] = 1, s[i] = 0;
+        else if (choice == 'P') s[i] = 1, h[i] = 0, p[i] = 0;
+        else h[i] = 1, s[i] = 0, p[i] = 0;
     }
-    hoof = psum(h);
-    paper = psum(p);
-    scissors = psum(s);
+    hoof = psum(h), paper = psum(p), scissors = psum(s);
     for (int i=0; i<N+1; i++) {
         answer = max(answer, hoof[i] + scissors[N] - scissors[i]);
         answer = max(answer, hoof[i] + paper[N] - paper[i]);

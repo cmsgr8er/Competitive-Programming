@@ -1,21 +1,3 @@
-/* Key idea is the following:
- *
- * Note that if a given string of digits forms a multiple of 2019,
- * lets say the number is d_k + 10*d_{k+1} + 100*d_{k+2} + ... + 10^(n-k)d_n
- * then we can multiply by 10^(k-1).
- *
- * If we define S_n to be the number formed by the first n digits, then after
- * multiplying the above expression by 10^(k-1), it is equivalent to
- *
- * S_n - S_{k-1} = 0 (mod 2019) <=> S_n = S_{k-1} (mod 2019)
- *
- * Note that it was key that gcd(2019, 10) = 1. Thus, 10^(-1) = 202 (mod 2019)
- * and so we can multiply subsequent terms by a factor of 202 to form an
- * equivalent sequence for S_n in the field F_{2019}.
- *
- * Then it just simply remains to find the number of such pairs of S_n with equal
- * residues, which is an easy exercise.
- */
 #include <bits/stdc++.h>
 using namespace std;
 int main() {
@@ -40,7 +22,3 @@ int main() {
 	}
 	cout << answer;
 }
-
-
-
-

@@ -1,14 +1,10 @@
-// Source: https://usaco.guide/general/io
-
 #include <bits/stdc++.h>
 using namespace std;
-
 const int MN = 1e5 + 10;
 int N, M, counter;
 bool visited[MN];
 vector<pair<int, int>> adj[MN];
 vector<int> misordered;
-
 void dfs(int node, int minwidth) {
     visited[node] = true;
     for (auto u: adj[node]) {
@@ -17,7 +13,6 @@ void dfs(int node, int minwidth) {
         }        
     }
 }
-
 bool isConnected(int wide) {
     bool connected = false;
     counter = 0;
@@ -25,13 +20,10 @@ bool isConnected(int wide) {
     for (int i=0; i<misordered.size(); i++) {
         if (visited[misordered[i]]) counter++;
     }
-    if (counter == misordered.size()) {
-        connected = true;
-    }
+    if (counter == misordered.size()) connected = true;
     memset(visited, 0, N+2);
     return connected;
 }
-
 void setIO(string fileName = "") {
     ios_base::sync_with_stdio(0); cin.tie(0);
     if((int)fileName.size()) {
@@ -42,21 +34,14 @@ void setIO(string fileName = "") {
 int main() {
     setIO("wormsort");
     cin >> N >> M;
-    int permutation[N+1], a, b, c, minimum, check = 0, left = 0, right = M-1, middle;
-    int widths[M];
+    int permutation[N+1], a, b, c, minimum, check = 0, left = 0, right = M-1, middle, widths[M];
     permutation[0] = 0;
     for (int i=1; i<= N; i++) {
         cin >> permutation[i];
-        if (permutation[i] != i) {
-            misordered.push_back(i);
-        }
-        else {
-            check++;
-        }
+        if (permutation[i] != i) misordered.push_back(i);
+        else check++;
     }
-    if (check == N) {
-        minimum = -1;
-    }
+    if (check == N) minimum = -1;
     else {
         for (int i=1; i<= M; i++) {
             cin >> a >> b >> c;
@@ -67,15 +52,10 @@ int main() {
         sort(widths, widths + M);
         while (left < right) {
             middle = (left + right+1)/2;
-            if (isConnected(widths[middle])) {
-                left = middle;
-            }
-            else {
-                right = middle-1;
-            }
+            if (isConnected(widths[middle])) left = middle;
+            else right = middle-1;
         }
         minimum = widths[left];
-        
     }
     cout << minimum;
 }

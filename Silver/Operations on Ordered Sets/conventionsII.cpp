@@ -9,9 +9,6 @@ void setIO(string fileName = "") {
 }
 struct cow {
 	int a, t, i;
-	bool operator<(const cow& c) {
-		return a < c.a;
-	}
 };
 
 int main() {

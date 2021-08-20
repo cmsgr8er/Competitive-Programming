@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 int main() {
     ios_base::sync_with_stdio(0); cin.tie(0);
 	int n,x, answer = 0; cin >> n >> x;
@@ -14,9 +13,7 @@ int main() {
 			left++;
 			right--;
 		}
-		else {
-			right--;
-		}
+		else right--;
 	}
 	if (left == right) answer++;
 	cout << answer;

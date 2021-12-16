@@ -12,7 +12,7 @@ int main() {
 		sum += b[i];
 	}
 	sort(b.rbegin(), b.rend());
-	for (int m=1; m<=min(hi,sum/k); m++) {
+	for (int m=1; m<=min(hi,sum/k+1); m++) {
 		int berries = 0, baskets = 0;
 		vector<int> amounts, rem;
 		for (int i=0; i<n; i++) rem.push_back(b[i]%m);

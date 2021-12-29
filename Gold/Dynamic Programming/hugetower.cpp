@@ -1,3 +1,6 @@
+// For some reason this was considered a "hard" in silver despite the problem being stupidly easy
+// My guess is that it's hard due to silver contestants not knowing dp, but really this "dp" isn't very special, just simple recursion
+
 #include <bits/stdc++.h>
 using namespace std;
 
